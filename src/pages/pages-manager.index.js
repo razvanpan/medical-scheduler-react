@@ -8,6 +8,7 @@ import { PortionEnum } from "../model/PortionEnum.ts";
 import { Scheduler } from "../model/Scheduler.model";
 import { Person } from "../model/Person.model";
 import AddMedicationChoicePage from "./AddMedication/ChoicePage/choice-page.index";
+import ManualPage from '../pages/AddMedication/ManualPage/manual-page.index';
 
 const PILLS = [
     new Pill(1, 'Aspirin', PortionEnum.HALF, new Scheduler(true, false, false)),
@@ -57,7 +58,7 @@ class PagesManager extends React.Component {
         } else if (this.state.page === PagesEnum.ADD_MEDICATION_PAGE) {
             return (<AddMedicationChoicePage onPageChange={this.handlePageChange} page={this.state.page} />);
         } else if (this.state.page === PagesEnum.ADD_MANUAL_MEDICATION_PAGE) {
-            return (<InfoPill onPageChange={this.handlePageChange} page={this.state.page} />);
+            return (<ManualPage onPageChange={this.handlePageChange} pillList={PILLS} page={this.state.page} />);
         }
     }
 

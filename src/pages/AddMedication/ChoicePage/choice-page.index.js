@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from "../../../components/Header/header.index";
-import { Card, CardBody, CardTitle, CardText, CardImg } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardImg } from 'reactstrap';
 import * as manualImg from '../../../assets/manual-effort.png';
 import * as qrCodeImg from '../../../assets/qr_code_PNG6.png';
 import "./style.css";
@@ -16,12 +16,10 @@ class AddMedicationChoicePage extends React.Component {
 
     goToManualAdd() {
         this.props.onPageChange(PagesEnum.ADD_MANUAL_MEDICATION_PAGE);
-        console.log(this.props);
     }
 
     goToQRcodeAdd() {
         this.props.onPageChange(PagesEnum.ADD_QR_MEDICATION_PAGE);
-        console.log(this.props);
     }
 
     render() {

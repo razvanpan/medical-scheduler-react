@@ -19,7 +19,6 @@ class ClockComponent extends React.Component {
     render() {
         return (
             <div >
-                {/* <p>Current time:</p> */}
                 <Clock
                     value={this.state.date}
                     size={this.props.zise}

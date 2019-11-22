@@ -11,11 +11,16 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 class Header extends React.Component {
     constructor(props) {
         super(props);
-        this.goToMainPageWithoutSave = this.goToMainPageWithoutSave.bind(this);
+        this.goToPreviousPage = this.goToPreviousPage.bind(this);
     }
 
-    goToMainPageWithoutSave() {
-        this.props.onPageChange(PagesEnum.MAIN_PAGE);
+    goToPreviousPage() {
+        if (this.props.page === PagesEnum.ADD_MEDICATION_PAGE || this.props.page === PagesEnum.PILL_INFO || this.props.page === PagesEnum.PROFILE_PAGE) {
+            this.props.onPageChange(PagesEnum.MAIN_PAGE);
+        }
+        if (this.props.page === PagesEnum.ADD_MANUAL_MEDICATION_PAGE) {
+            this.props.onPageChange(PagesEnum.ADD_MEDICATION_PAGE);
+        }
     }
 
     render() {
@@ -36,7 +41,7 @@ class Header extends React.Component {
         if (this.props.page === PagesEnum.PROFILE_PAGE) {
             return (
                 <div className="topBar row" style={{ width: "-webkit-fill-available", position: "fixed", zIndex: "1" }}>
-                    <div className="col-2" style={{ textAlign: "center", paddingLeft: "5%" }} onClick={this.goToMainPageWithoutSave}>
+                    <div className="col-2" style={{ textAlign: "center", paddingLeft: "5%" }} onClick={this.goToPreviousPage}>
                         <ClearIcon fontSize="large" style={{ margin: "40% 70% 0% 0%" }} />
                     </div>
                     <div className="col-8" style={{ textAlign: "left" }}>
@@ -53,7 +58,7 @@ class Header extends React.Component {
         if (this.props.page === PagesEnum.PILL_INFO) {
             return (
                 <div className="topBar row" style={{ width: "-webkit-fill-available", position: "fixed", zIndex: "1" }}>
-                    <div className="col-2" style={{ textAlign: "center", paddingLeft: "5%" }} onClick={this.goToMainPageWithoutSave}>
+                    <div className="col-2" style={{ textAlign: "center", paddingLeft: "5%" }} onClick={this.goToPreviousPage}>
                         <ClearIcon fontSize="large" style={{ margin: "40% 70% 0% 0%" }} />
                     </div>
                     <div className="col-8" style={{ textAlign: "left" }}>
@@ -66,10 +71,10 @@ class Header extends React.Component {
             );
         }
 
-        if (this.props.page === PagesEnum.ADD_MEDICATION_PAGE) {
+        if (this.props.page === PagesEnum.ADD_MEDICATION_PAGE || this.props.page === PagesEnum.ADD_MANUAL_MEDICATION_PAGE) {
             return (
                 <div className="topBar row" style={{ width: "-webkit-fill-available", position: "fixed", zIndex: "1" }}>
-                    <div className="col-2" style={{ textAlign: "center", paddingLeft: "5%" }} onClick={this.goToMainPageWithoutSave}>
+                    <div className="col-2" style={{ textAlign: "center", paddingLeft: "5%" }} onClick={this.goToPreviousPage}>
                         <ArrowBackIosIcon fontSize="large" style={{ margin: "40% 70% 0% 0%" }} />
                     </div>
                     <div className="col-10" style={{ textAlign: "left" }}>
