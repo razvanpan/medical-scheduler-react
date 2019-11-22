@@ -1,0 +1,7 @@
+.profileButtons{
+  overflow: hidden;
+  position: fixed;
+  bottom: 15%;
+  width: -webkit-fill-available;
+}
+

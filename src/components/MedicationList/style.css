@@ -1,0 +1,7 @@
+.left {
+    background: #9e978e;
+    display: inline-block;
+    margin: 0 1em 1em 0;
+    height: 45px * 2;
+    width: 45px;
+}

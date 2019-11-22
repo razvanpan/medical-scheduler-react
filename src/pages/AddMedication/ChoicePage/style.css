@@ -1,0 +1,9 @@
+.cardSpecs {
+  width: 70%;
+}
+
+.cardTitle {
+  align-self: center;
+  font-weight: bold;
+  padding: 0;
+}

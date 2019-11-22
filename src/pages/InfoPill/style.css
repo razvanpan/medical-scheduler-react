@@ -1,0 +1,24 @@
+.globalMargin{
+  margin: 10% 8%;
+}
+
+.title {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.text{
+  font-weight: bold;
+}
+
+.container {
+  padding-top: 5%;
+  margin-bottom: 15%;
+}
+
+.infoPillDeleteButton{
+  position: fixed;
+  bottom: 5%;
+  width: -webkit-fill-available;
+}

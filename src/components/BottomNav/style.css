@@ -1,0 +1,9 @@
+.bar{
+overflow: hidden;
+background-color: #EFEFEF;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+}
+
